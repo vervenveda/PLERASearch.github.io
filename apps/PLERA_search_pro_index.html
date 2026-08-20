@@ -169,5 +169,6 @@ $("#themeBtn").onclick=()=>{state.theme=state.theme==="dark"?"light":"dark";save
 $("#exportBtn").onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(state,null,2)],{type:'application/json'}));a.download='Plera_Search_Gate_Settings.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};$("#importBtn").onclick=()=>$("#importFile").click();$("#importFile").onchange=async e=>{try{state={...structuredClone(defaults),...JSON.parse(await e.target.files[0].text())};save()}catch{alert('Invalid settings file')}};$("#wipeBtn").onclick=()=>{if(confirm('Erase all locally stored Plera Search Gate data?')){localStorage.removeItem(KEY);state=structuredClone(defaults);renderAll()}};
 renderAll();
 </script>
+<script src="/assets/vnv-beta-link.js" defer></script>
 </body>
 </html>

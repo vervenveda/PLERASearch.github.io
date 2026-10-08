@@ -17,14 +17,17 @@ WHAT CHANGED
 - Beta widget uses the asset shipped in this repository rather than the account root.
 
 PRESERVED
-19 providers/routes, 34 research lanes, 139 resources, embedded network directory, source comparison, visible queries/destinations, advanced operators, shared setups, local saved searches/history/import/export, privacy choices, modal keyboard handling, and popup fallback. Existing storage keys remain unchanged.
+22 providers/routes, 34 research lanes, 139 resources, embedded network directory, source comparison, visible queries/destinations, advanced operators, shared setups, local saved searches/history/import/export, privacy choices, modal keyboard handling, and popup fallback. Existing storage keys remain unchanged.
 
 VALIDATION
 Headless Chromium: JavaScript syntax and runtime, initial search, profile selection, source filtering, saving a search, workspace navigation, and viewport widths 320/390/768/1440. No page JavaScript errors or horizontal document overflow in these checks.
-All 646 provider/lane combinations generated HTTP(S) destination URLs. This checks URL construction, not third-party uptime or the accuracy of returned search results. External services may require login, subscription, consent, or have their own regional restrictions.
+All 748 provider/lane combinations generated HTTP(S) destination URLs. This checks URL construction, not third-party uptime or the accuracy of returned search results. External services may require login, subscription, consent, or have their own regional restrictions.
 
 SCOPE
 This replacement updates the main portal only. Legacy standalone apps and their external links were inspected as repository context but were not modified or exhaustively audited. The repository README currently contains a Python script rather than plain Markdown; it was left unchanged.
 
 PUBLICATION
 The GitHub integration returned HTTP 403 (Resource not accessible by integration). No remote changes were committed. Upload the replacement index.html to apply this cleanup.
+
+PROVIDER UPDATE — v4.1.0
+Added Marginalia Search, Wiby, and Yep to provider selection, both directories, destination preview, comparison, and saved/shareable setups. The new engines open web search for all lanes. Confirmed homepage availability through public web retrieval; search-result retrieval was unavailable through the audit service, so end-to-end third-party result pages remain unverified. Local browser checks confirm the new routes retain the selected provider hostname across all 34 lanes.

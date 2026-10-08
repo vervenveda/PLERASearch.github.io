@@ -981,6 +981,17 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
 }
 @media print{.light-ribbons,.particles,.hero-actions,.hero-stats{display:none!important}}
 
+
+.directory-help{font-size:.9rem;line-height:1.6;color:#bdd4e8}
+/* Organized portal workspace: compact introduction, readable controls, balanced cards. */
+[hidden]{display:none!important}
+html{scroll-padding-top:90px}body{font-size:16px}
+.hero{padding:38px 20px 28px;min-height:0}.hero-inner{padding:0}.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.12;letter-spacing:-.03em;margin:12px 0}.hero-copy{margin:12px auto 0;max-width:760px;font-size:1rem;line-height:1.6}
+main{width:min(1180px,calc(100% - 32px));margin:auto}.workspace-nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:12px;border:1px solid var(--line);border-radius:7px;background:#081b31}.workspace-nav button{flex:1 1 150px;min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:7px;background:transparent;color:#d6eaff;font:600 .9rem var(--font-ui);cursor:pointer}.workspace-nav button[aria-pressed=true]{background:#79e7ff;color:#03172b;border-color:#79e7ff}
+.search-studio{margin:0 0 28px;padding:24px;border-radius:7px}.studio-head,.section-head{gap:20px}.studio-head h2,.section-head h2{font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2}.studio-head p,.section-head p{font-size:.95rem}.field label,.field>span{font-size:.78rem;letter-spacing:.02em}.field input,.field select{font-size:1rem;min-height:44px}.query-row{margin-top:20px}.search-input{font-size:1rem!important;min-height:54px!important}.primary-button,.secondary-button,.quiet-button{font-size:.85rem;min-height:44px;border-radius:7px}.controls-grid.five{grid-template-columns:repeat(2,minmax(0,1fr))}.controls-grid.five .field:nth-child(n+3){display:none}.options summary{font-size:.9rem}.options summary strong{font-size:.75rem}.advanced-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.check{font-size:.85rem}.preview{grid-template-columns:auto minmax(0,1fr) auto}.preview strong,.preview code,.destination-preview,.search-status{font-size:.85rem;overflow-wrap:anywhere}.destination-preview{line-height:1.6}.studio-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.studio-actions>*{width:100%}
+.profile-grid,.category-grid,.engine-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.profile-card,.category-card,.engine-card,.launch-card{border-radius:7px;min-width:0;display:flex;flex-direction:column;height:100%}.profile-card small,.category-card small,.engine-card small,.launch-card p{font-size:.9rem;line-height:1.55}.engine-card span{font-size:.78rem}.engine-actions,.card-actions{margin-top:auto;padding-top:12px;display:flex;flex-wrap:wrap;gap:8px}.engine-card .engine-actions button,.engine-card .engine-actions a,.launch-card .card-actions button,.launch-card .card-actions a{font-size:.82rem;min-height:44px;flex:1 1 110px;text-align:center}.chip{font-size:.9rem;min-height:44px}.modal-tools input,.modal-tools select{font-size:1rem;min-width:0;min-height:44px}.modal-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.modal-head{flex-wrap:wrap}.plera-dialog{border-radius:7px}.guide-panel p,.guide-panel li,.info-card p,.notice,.saved-item strong{font-size:.9rem}.saved-item small{font-size:.8rem}.saved-item button{font-size:.8rem;min-height:44px}footer{padding-bottom:70px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #79e7ff;outline-offset:3px}
+@media(max-width:800px){.profile-grid,.category-grid,.engine-grid,.modal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.advanced-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.studio-head,.section-head{display:block}.studio-actions{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.search-studio{padding:16px}.workspace-nav{gap:6px}.workspace-nav button{flex-basis:130px}.controls-grid.five,.advanced-grid,.profile-grid,.category-grid,.engine-grid,.modal-grid,.history-columns{grid-template-columns:1fr}.preview{display:flex;flex-wrap:wrap}.preview code{width:100%}.options summary{display:block}.options summary strong{display:block;margin-top:6px}.option-body{grid-template-columns:1fr!important}.modal-tools{display:flex;flex-direction:column}.modal-tools>*{width:100%}.hero{padding-top:24px}}
 </style>
 </head>
 <body>
@@ -1009,90 +1020,22 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
   </div>
 </header>
 
-<section class="hero" aria-labelledby="pageTitle">
-  <div class="light-ribbons" aria-hidden="true">
-    <svg viewBox="0 0 1600 420" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="ribbonGradient" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stop-color="#1c79ff" stop-opacity="0"></stop>
-          <stop offset=".28" stop-color="#21a9ff"></stop>
-          <stop offset=".58" stop-color="#e9fcff"></stop>
-          <stop offset=".78" stop-color="#41d8ff"></stop>
-          <stop offset="1" stop-color="#286dff" stop-opacity="0"></stop>
-        </linearGradient>
-        <linearGradient id="ribbonBright" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stop-color="#6ccfff" stop-opacity="0"></stop>
-          <stop offset=".38" stop-color="#73e8ff"></stop>
-          <stop offset=".61" stop-color="#ffffff"></stop>
-          <stop offset=".8" stop-color="#5ccfff"></stop>
-          <stop offset="1" stop-color="#5b8fff" stop-opacity="0"></stop>
-        </linearGradient>
-        <linearGradient id="ribbonSecondary" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0" stop-color="#287eff" stop-opacity="0"></stop>
-          <stop offset=".42" stop-color="#3e9dff"></stop>
-          <stop offset=".72" stop-color="#65dcff"></stop>
-          <stop offset="1" stop-color="#4b8bff" stop-opacity="0"></stop>
-        </linearGradient>
-        <filter id="ribbonBlur" x="-20%" y="-40%" width="140%" height="180%"><feGaussianBlur stdDeviation="14"></feGaussianBlur></filter>
-      </defs>
-      <path class="ribbon-soft" d="M-130 365 C210 205 445 355 745 275 S1245 102 1735 -38"></path>
-      <path class="ribbon-mid" d="M-130 365 C210 205 445 355 745 275 S1245 102 1735 -38"></path>
-      <path class="ribbon-bright" d="M-130 365 C210 205 445 355 745 275 S1245 102 1735 -38"></path>
-      <path class="ribbon-secondary" d="M-90 405 C260 250 500 392 820 302 S1280 155 1690 35"></path>
-      <path class="ribbon-secondary" d="M360 430 C620 308 835 350 1070 238 S1410 66 1685 -20" opacity=".45"></path>
-    </svg>
-  </div>
-  <span class="particles" aria-hidden="true"></span>
-  <div class="hero-inner">
-    <div class="hero-logo">
-      <svg class="hero-symbol" viewBox="0 0 190 190" aria-hidden="true">
-        <defs>
-          <radialGradient id="lensFill" cx=".38" cy=".28" r=".78">
-            <stop offset="0" stop-color="#ffffff" stop-opacity=".28"></stop>
-            <stop offset=".38" stop-color="#248bd7" stop-opacity=".24"></stop>
-            <stop offset="1" stop-color="#06162f" stop-opacity=".86"></stop>
-          </radialGradient>
-          <linearGradient id="symbolAccent" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#dffcff"></stop><stop offset=".55" stop-color="#79e7ff"></stop><stop offset="1" stop-color="#2b91ff"></stop>
-          </linearGradient>
-          <linearGradient id="handleGradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#f6fdff"></stop><stop offset=".55" stop-color="#79e7ff"></stop><stop offset="1" stop-color="#269aff"></stop>
-          </linearGradient>
-        </defs>
-        <circle class="symbol-glow" cx="106" cy="75" r="49"></circle>
-        <circle class="symbol-ring" cx="106" cy="75" r="45"></circle>
-        <path class="symbol-accent" d="M72 69a36 36 0 0 1 42-29"></path>
-        <path class="symbol-accent" d="M79 95a35 35 0 0 0 20 13" opacity=".58"></path>
-        <path class="symbol-handle" d="M72 112 31 153"></path>
-        <circle class="symbol-handle-cap" cx="25" cy="159" r="10"></circle>
-      </svg>
-      <div class="hero-title">
-        <div class="eyebrow">One sovereign doorway · visible routing · deliberate discovery</div>
-        <h1 id="pageTitle">PLERA<span>Search Gate™</span></h1>
-      </div>
-    </div>
-    <p class="hero-copy">A luminous gateway into transparent web search, specialist research systems, source comparison, public records, scholarly indexes, code, archives, maps, civic information, and the complete Verve N Veda network.</p>
-    <div class="hero-actions">
-      <a class="hero-pill primary" href="#searchStudio">Open Search Command Center</a>
-      <button class="hero-pill" type="button" data-open-modal="resourceModal">Browse 139 Research Sources</button>
-      <button class="hero-pill" type="button" data-open-modal="networkModal">Open PLERA Network</button>
-      <button class="hero-pill" type="button" data-open-modal="guideModal">Search Guide</button>
-    </div>
-    <div class="hero-stats" aria-label="PLERA Search capabilities">
-      <div class="hero-stat"><strong>19</strong><span>Search providers and routes</span></div>
-      <div class="hero-stat"><strong>34</strong><span>Research lanes</span></div>
-      <div class="hero-stat"><strong>139</strong><span>Specialist destinations</span></div>
-      <div class="hero-stat"><strong>24</strong><span>PLERA network repositories</span></div>
-    </div>
-    <div class="hero-note"><strong>Transparent by design:</strong> PLERA shows the query, source guidance, and final destination before anything opens. It does not proxy result pages or silently decide which source you must trust.</div>
-  </div>
-</section>
-
+<section class="hero" aria-labelledby="pageTitle"><div class="hero-inner">
+<div class="eyebrow">PLERA Search Gate™</div><h1 id="pageTitle">Find your next answer.</h1>
+<p class="hero-copy">Search the web, explore trusted research sources, or discover the PLERA network. Choose a destination and see your search before opening it.</p>
+</div></section>
 <main>
+<nav class="workspace-nav" aria-label="Portal workspace">
+<button type="button" data-view="search" aria-pressed="true">Search</button>
+<button type="button" data-view="methods" aria-pressed="false">Research methods</button>
+<button type="button" data-view="sources" aria-pressed="false">Source directory</button>
+<button type="button" data-view="saved" aria-pressed="false">Saved searches</button>
+<button type="button" data-view="privacy" aria-pressed="false">Privacy</button>
+</nav>
   <section class="search-studio" id="searchStudio" aria-labelledby="searchHeading">
     <div class="studio-head">
-      <div><div class="section-kicker">PLERA search command center</div><h2 id="searchHeading">Search broadly. Narrow with purpose.</h2></div>
-      <p>PLERA Smart Route can send specialized questions to purpose-built sources. Every destination and every added operator remains visible before the search opens.</p>
+      <div><div class="section-kicker">Start your search</div><h2 id="searchHeading">What are you looking for?</h2></div>
+      <p>Enter a topic, choose a provider and subject, then open results. Smart Route selects a specialist source when available.</p>
     </div>
 
     <form id="searchForm" novalidate>
@@ -1107,7 +1050,12 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
       <div class="controls-grid five">
         <div class="field"><label for="searchEngine">Search route</label><select id="searchEngine"></select></div>
         <div class="field"><label for="searchLane">Research lane</label><select id="searchLane"></select></div>
-        <div class="field"><label for="sourceGuide">Source guidance</label><select id="sourceGuide">
+
+      </div>
+
+      <details class="options" id="advancedOptions">
+        <summary><span>More search filters</span><strong>Words · Sites · Dates · Language · Local settings</strong></summary>
+        <div class="advanced-grid">        <div class="field"><label for="sourceGuide">Source guidance</label><select id="sourceGuide">
           <option value="open">No added source filter</option>
           <option value="guided" selected>Add lane guidance</option>
           <option value="primary">Prefer primary & institutional sources</option>
@@ -1120,11 +1068,6 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
         <div class="field"><label for="safeSearch">Safe Search</label><select id="safeSearch">
           <option value="moderate" selected>Moderate</option><option value="strict">Strict</option><option value="off">Off</option>
         </select></div>
-      </div>
-
-      <details class="options" id="advancedOptions">
-        <summary><span>Advanced transparent controls</span><strong>Words · Sites · Dates · Language · Local settings</strong></summary>
-        <div class="advanced-grid">
           <label class="field"><span>Must include</span><input id="includeWords" maxlength="240" placeholder="comma-separated words or phrases"></label>
           <label class="field"><span>Exclude</span><input id="excludeWords" maxlength="240" placeholder="words or phrases to remove"></label>
           <label class="field"><span>Search only this site</span><input id="siteInclude" maxlength="180" placeholder="example.gov"></label>
@@ -1174,10 +1117,10 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
       <div class="studio-actions">
         <button class="secondary-button teal" id="compareButton" type="button">Compare Sources</button>
         <button class="secondary-button" id="saveSearchButton" type="button">Save Search</button>
-        <button class="secondary-button" id="copySetupButton" type="button">Copy PLERA Setup</button>
-        <button class="secondary-button" id="providerHomeButton" type="button">Open Destination Home</button>
+        <button class="secondary-button" id="copySetupButton" type="button">Copy Shareable Setup</button>
+        <button class="secondary-button" id="providerHomeButton" type="button">Visit Provider Website</button>
         <button class="secondary-button" id="clearButton" type="button">Clear Query</button>
-        <button class="secondary-button" id="focusShortcutButton" type="button">Focus Search</button>
+        <button class="secondary-button" id="focusShortcutButton" type="button" data-open-modal="guideModal">Search Help</button>
       </div>
 
       <div class="fallback-link" id="fallbackBox" hidden>Your browser blocked the new tab. <a id="fallbackAnchor" href="#" target="_blank" rel="noopener noreferrer">Open the prepared search directly</a>.</div>
@@ -1259,7 +1202,7 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
   <div class="plera-dialog">
     <div class="modal-head"><h2 id="resourceModalTitle">Research Library</h2><span class="repo-count" id="resourceCount"></span><button class="quiet-button" data-close-modal type="button">Close</button></div>
     <div class="modal-body">
-      <div class="modal-tools"><input id="resourceFilter" type="search" placeholder="Filter 139 sources by name, purpose, or tag…"><select id="resourceCategory"></select><button class="secondary-button" id="clearResourceFilter" type="button">Clear Filter</button></div>
+      <p class="directory-help">Visit a website directly, or choose “Use in Search” to prepare your query. When a search is entered, result links open that query; sources without built-in search use a DuckDuckGo site search.</p><div class="modal-tools"><input id="resourceFilter" aria-label="Filter research sources" type="search" placeholder="Filter 139 sources by name, purpose, or tag…"><select id="resourceCategory" aria-label="Research source category"></select><button class="secondary-button" id="clearResourceFilter" type="button">Clear Filter</button></div>
       <div class="modal-grid" id="resourceGrid"></div>
     </div>
   </div>
@@ -1269,7 +1212,7 @@ footer{border-top:1px solid rgba(105,198,255,.10);background:rgba(0,4,12,.72)}.f
   <div class="plera-dialog">
     <div class="modal-head"><h2 id="networkModalTitle">PLERA Repository Network</h2><span class="repo-count" id="networkCount"></span><button class="quiet-button" data-close-modal type="button">Close</button></div>
     <div class="modal-body">
-      <div class="modal-tools"><input id="networkFilter" type="search" placeholder="Filter repositories…"><select id="networkCategory"></select><button class="secondary-button" id="refreshReposButton" type="button">Refresh from GitHub</button></div>
+      <div class="modal-tools"><input id="networkFilter" aria-label="Filter PLERA network" type="search" placeholder="Filter repositories…"><select id="networkCategory" aria-label="Network category"></select><button class="secondary-button" id="refreshReposButton" type="button">Refresh from GitHub</button></div>
       <div class="search-status" id="repoStatus">Embedded directory ready. Live refresh contacts GitHub only when you press Refresh.</div>
       <div class="modal-grid" id="networkGrid" style="margin-top:12px"></div>
     </div>
@@ -1339,6 +1282,15 @@ let repositoryData=REPOS.slice();
 let sourceOverrideId=null;
 let modalReturnFocus=null;
 
+const workspaceSections={search:["searchStudio"],methods:["profiles","quickLanes"],sources:["library","engines"],saved:["localLibrary"],privacy:["privacy"]};
+function showWorkspace(view){
+  if(!workspaceSections[view])return;
+  Object.entries(workspaceSections).forEach(([name,ids])=>ids.forEach(id=>document.getElementById(id).hidden=name!==view));
+  document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.view===view)));
+}
+document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>showWorkspace(b.dataset.view)));
+document.querySelectorAll('a[href="#searchStudio"],a[href="#privacy"]').forEach(a=>a.addEventListener("click",()=>showWorkspace(a.hash==="#privacy"?"privacy":"search")));
+showWorkspace("search");
 function safeParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}
 function setStatus(message,kind=""){searchStatus.textContent=message;searchStatus.dataset.kind=kind}
 function toast(message,ms=2600){const el=$("#toast");el.textContent=message;el.classList.add("show");clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove("show"),ms)}
@@ -1561,7 +1513,7 @@ function updatePreview(){
     destinationPreview.append(b,document.createTextNode(` · ${search.kind==="specialist"?"specialist resource":"search provider"} · ${search.url}`));
   }else destinationPreview.textContent="Destination: waiting for a query.";
   copyLinkButton.disabled=!search.url;
-  $$(".engine-card").forEach(card=>card.setAttribute("aria-pressed",String(card.dataset.engine===engineSelect.value)));
+  $$(".engine-card").forEach(card=>card.querySelector("button").setAttribute("aria-pressed",String(card.dataset.engine===engineSelect.value)));
   fallbackBox.hidden=true;
   saveSettings();
 }
@@ -1593,11 +1545,11 @@ function saveCurrentSearch(){
   renderSaved();setStatus("Search setup saved in this browser profile.","good")
 }
 function restoreItem(item){
-  queryInput.value=item.raw||item.name||"";applySnapshot(item.settings||{});updatePreview();queryInput.focus();setStatus("Saved search setup restored. Review it before opening results.","good")
+  queryInput.value=item.raw||item.name||"";applySnapshot(item.settings||{});updatePreview();showWorkspace("search");queryInput.focus({preventScroll:true});setStatus("Saved search setup restored. Review it before opening results.","good")
 }
 function renderHistory(){
   recentList.replaceChildren();
-  if(!saveHistory.checked){const e=document.createElement("div");e.className="recent-empty";e.textContent="Recent history is off. Enable it under Advanced transparent controls.";recentList.append(e);return}
+  if(!saveHistory.checked){const e=document.createElement("div");e.className="recent-empty";e.textContent="Recent history is off. Enable it under More search filters.";recentList.append(e);return}
   const items=historyItems();if(!items.length){const e=document.createElement("div");e.className="recent-empty";e.textContent="No recent searches are stored on this device.";recentList.append(e);return}
   items.forEach(item=>{
     const b=document.createElement("button");b.type="button";b.className="recent-item";
@@ -1627,7 +1579,7 @@ function renderProfiles(){
     const small=document.createElement("small");small.textContent=p.description;b.append(icon,strong,small);
     b.onclick=()=>{
       if(p.id==="plera"){openModal("networkModal");return}
-      engineSelect.value=p.engine;laneSelect.value=p.lane;sourceGuide.value=p.guide;fileType.value=p.file||"";sourceOverrideId=null;updateSourceOverride();updatePreview();queryInput.focus();setStatus(`${p.name} profile selected. Enter or revise the query before searching.`,"good")
+      engineSelect.value=p.engine;laneSelect.value=p.lane;sourceGuide.value=p.guide;fileType.value=p.file||"";sourceOverrideId=null;updateSourceOverride();updatePreview();showWorkspace("search");queryInput.focus({preventScroll:true});setStatus(`${p.name} profile selected. Enter or revise the query before searching.`,"good")
     };host.append(b)
   })
 }
@@ -1635,7 +1587,7 @@ function renderLanes(){
   laneSelect.replaceChildren();
   Object.entries(LANES).forEach(([id,lane])=>{const o=document.createElement("option");o.value=id;o.textContent=lane.name;laneSelect.append(o)});
   const chips=$("#quickChips");chips.replaceChildren();
-  Object.entries(LANES).forEach(([id,lane])=>{const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.lane=id;const span=document.createElement("span");span.textContent=lane.icon;b.append(span,document.createTextNode(" "+lane.name));b.onclick=()=>{laneSelect.value=id;sourceOverrideId=null;updateSourceOverride();updatePreview();queryInput.focus();setStatus(`${lane.name} lane selected.`,"good")};chips.append(b)})
+  Object.entries(LANES).forEach(([id,lane])=>{const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.lane=id;const span=document.createElement("span");span.textContent=lane.icon;b.append(span,document.createTextNode(" "+lane.name));b.onclick=()=>{laneSelect.value=id;sourceOverrideId=null;updateSourceOverride();updatePreview();showWorkspace("search");queryInput.focus({preventScroll:true});setStatus(`${lane.name} lane selected.`,"good")};chips.append(b)})
 }
 function renderEngineSelect(){
   engineSelect.replaceChildren();
@@ -1644,11 +1596,11 @@ function renderEngineSelect(){
   groups.forEach((items,label)=>{const group=document.createElement("optgroup");group.label=label;items.forEach(([id,e])=>{const o=document.createElement("option");o.value=id;o.textContent=e.name;group.append(o)});engineSelect.append(group)})
 }
 function engineCard(id,e,modal=false){
-  const card=document.createElement("div");card.className="engine-card";card.dataset.engine=id;card.setAttribute("aria-pressed",String(id===engineSelect.value));
+  const card=document.createElement("div");card.className="engine-card";card.dataset.engine=id;
   const strong=document.createElement("strong");strong.textContent=e.name;const span=document.createElement("span");span.textContent=e.group;const small=document.createElement("small");small.textContent=e.description;
   const actions=document.createElement("div");actions.className="engine-actions";
-  const choose=document.createElement("button");choose.type="button";choose.textContent="Select";choose.onclick=()=>{engineSelect.value=id;sourceOverrideId=null;updateSourceOverride();updatePreview();if(modal)closeModal("engineModal");queryInput.focus();setStatus(`${e.name} selected.`,"good")};
-  const home=document.createElement("a");home.href=e.home;home.target="_blank";home.rel="noopener noreferrer";home.referrerPolicy="no-referrer";home.textContent="Home";
+  const choose=document.createElement("button");choose.type="button";choose.textContent="Use in Search";choose.onclick=()=>{engineSelect.value=id;sourceOverrideId=null;updateSourceOverride();updatePreview();if(modal)closeModal("engineModal");showWorkspace("search");queryInput.focus({preventScroll:true});setStatus(`${e.name} selected.`,"good")};
+  const home=document.createElement("a");home.href=e.home;home.target="_blank";home.rel="noopener noreferrer";home.referrerPolicy="no-referrer";home.textContent="Visit Website ↗";
   actions.append(choose,home);card.append(strong,span,small,actions);return card
 }
 function renderEngines(){
@@ -1663,7 +1615,7 @@ function renderResourceCategories(){
     const em=document.createElement("em");em.textContent=`${count} destinations`;
     const strong=document.createElement("strong");strong.textContent=category;
     const small=document.createElement("small");small.textContent="Open the searchable resource directory for this category.";
-    b.append(em,strong,small);b.onclick=()=>{$("#resourceCategory").value=category;renderResources();openModal("resourceModal")};host.append(b)
+    b.append(em,strong,small);b.onclick=()=>{$("#resourceFilter").value="";$("#resourceCategory").value=category;renderResources();openModal("resourceModal")};host.append(b)
   })
 }
 function populateResourceFilters(){
@@ -1675,8 +1627,8 @@ function resourceCard(r){
   const top=document.createElement("div");top.className="card-top";const strong=document.createElement("strong");strong.textContent=r.name;const badge=document.createElement("span");badge.className="badge";badge.textContent=r.category;top.append(strong,badge);
   const p=document.createElement("p");p.textContent=r.description;
   const actions=document.createElement("div");actions.className="card-actions";
-  const route=document.createElement("button");route.type="button";route.className="route";route.textContent="Route Search Here";route.onclick=()=>{sourceOverrideId=r.id;engineSelect.value="plera";updateSourceOverride();updatePreview();closeModal("resourceModal");queryInput.focus();setStatus(`${r.name} set as the direct search destination.`,"good")};
-  const open=document.createElement("a");open.href=resourceSearchUrl(r,queryInput.value);open.target="_blank";open.rel="noopener noreferrer";open.referrerPolicy="no-referrer";open.textContent=queryInput.value.trim()?"Search Now":"Open Home";
+  const route=document.createElement("button");route.type="button";route.className="route";route.textContent="Use in Search";route.onclick=()=>{sourceOverrideId=r.id;engineSelect.value="plera";updateSourceOverride();updatePreview();closeModal("resourceModal");showWorkspace("search");queryInput.focus({preventScroll:true});setStatus(`${r.name} set as the direct search destination.`,"good")};
+  const open=document.createElement("a");open.href=resourceSearchUrl(r,queryInput.value);open.target="_blank";open.rel="noopener noreferrer";open.referrerPolicy="no-referrer";open.textContent=queryInput.value.trim()?(r.search?"Open Results ↗":"Search Site via DuckDuckGo ↗"):"Visit Website ↗";
   actions.append(route,open);card.append(top,p,actions);return card
 }
 function renderResources(){
@@ -1701,7 +1653,7 @@ function repoCard(r){
   const actions=document.createElement("div");actions.className="card-actions";
   if(!r.reserved){const site=document.createElement("a");site.href=r.site;site.target="_blank";site.rel="noopener noreferrer";site.referrerPolicy="no-referrer";site.textContent="Open Site";actions.append(site)}
   const github=document.createElement("a");github.href=r.github;github.target="_blank";github.rel="noopener noreferrer";github.referrerPolicy="no-referrer";github.textContent="Repository";actions.append(github);
-  const search=document.createElement("button");search.type="button";search.className="route";search.textContent="Search This Site";search.onclick=()=>{siteInclude.value=new URL(r.site).hostname+(r.site==="https://vervenveda.github.io/"?"":new URL(r.site).pathname.replace(/\/$/,""));engineSelect.value="duckduckgo";sourceOverrideId=null;updateSourceOverride();updatePreview();closeModal("networkModal");queryInput.focus();setStatus(`${r.name} added as a visible site filter.`,"good")};actions.append(search);
+  const search=document.createElement("button");search.type="button";search.className="route";search.textContent="Set Site Filter";search.onclick=()=>{siteInclude.value=new URL(r.site).hostname+(r.site==="https://vervenveda.github.io/"?"":new URL(r.site).pathname.replace(/\/$/,""));engineSelect.value="duckduckgo";sourceOverrideId=null;updateSourceOverride();updatePreview();closeModal("networkModal");showWorkspace("search");queryInput.focus({preventScroll:true});setStatus(`${r.name} added as a visible site filter.`,"good")};if(!r.reserved)actions.append(search);
   card.append(top,p,actions);return card
 }
 function populateNetworkFilters(){
@@ -1774,8 +1726,8 @@ form.addEventListener("submit",event=>{event.preventDefault();const search=curre
 saveHistory.addEventListener("change",()=>{saveSettings();renderHistory();setStatus(saveHistory.checked?"Recent searches will be stored only in this browser profile.":"Recent history is off; existing entries remain until cleared.","good")});
 $("#clearSourceOverride").onclick=()=>{sourceOverrideId=null;updateSourceOverride();updatePreview();setStatus("Automatic routing restored.","good")};
 $("#providerHomeButton").onclick=()=>openUrl(destinationHome(),"destination home",true);
-$("#clearButton").onclick=()=>{queryInput.value="";includeWords.value=excludeWords.value=siteInclude.value=siteExclude.value=titleWords.value=urlWords.value="";sourceOverrideId=null;updateSourceOverride();updatePreview();queryInput.focus();setStatus("Search fields cleared.","good")};
-$("#focusShortcutButton").onclick=()=>queryInput.focus();
+$("#clearButton").onclick=()=>{queryInput.value="";includeWords.value=excludeWords.value=siteInclude.value=siteExclude.value=titleWords.value=urlWords.value="";sourceOverrideId=null;updateSourceOverride();updatePreview();showWorkspace("search");queryInput.focus({preventScroll:true});setStatus("Search fields cleared.","good")};
+
 $("#compareButton").onclick=()=>{if(!currentSearch().url){setStatus("Enter a query before comparing sources.","bad");return}openModal("compareModal")};
 $("#saveSearchButton").onclick=saveCurrentSearch;
 copyLinkButton.onclick=async()=>{const s=currentSearch();if(!s.url)return;try{await copyText(s.url);setStatus("Search destination link copied.","good")}catch{setStatus("Clipboard access was blocked.","warn")}};
@@ -1805,6 +1757,7 @@ init();
 window.PLERA_SearchGate={version:"4.0.0",engines:Object.keys(ENGINES),lanes:Object.keys(LANES),resources:RESOURCES.length,repositories:REPOS.length,currentSearch,buildGeneralQuery};
 })();
 </script>
-<script src="/assets/vnv-beta-link.js" defer></script>
+<script src="assets/vnv-beta-link.js" defer></script>
 </body>
 </html>
+

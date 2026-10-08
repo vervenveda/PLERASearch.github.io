@@ -1,0 +1,30 @@
+PLERA Search Portal Cleanup — October 8, 2026
+
+INSTALLATION
+Replace only index.html at the root of vervenveda/PLERASearch.github.io with the included index.html. Keep apps/, assets/, mentor-manifest.json, and workflow files unchanged. GitHub Pages will publish according to the repository's existing configuration.
+
+WHAT CHANGED
+- Compact introduction brings the search controls forward.
+- Five workspace views: Search, Research methods, Source directory, Saved searches, Privacy.
+- Detailed filters remain available under More search filters.
+- Use in Search clearly identifies setup actions; Visit Website and Open Results identify external links.
+- The redundant Focus Search button is now Search Help.
+- Balanced responsive cards, aligned action areas, readable type, larger controls, and keyboard focus indicators.
+- Source category selection clears stale text filters.
+- Research and network filter inputs have accessible labels.
+- Sources without native search explicitly label DuckDuckGo site-search result links.
+- Reserved network sites do not offer a site-filter action.
+- Beta widget uses the asset shipped in this repository rather than the account root.
+
+PRESERVED
+19 providers/routes, 34 research lanes, 139 resources, embedded network directory, source comparison, visible queries/destinations, advanced operators, shared setups, local saved searches/history/import/export, privacy choices, modal keyboard handling, and popup fallback. Existing storage keys remain unchanged.
+
+VALIDATION
+Headless Chromium: JavaScript syntax and runtime, initial search, profile selection, source filtering, saving a search, workspace navigation, and viewport widths 320/390/768/1440. No page JavaScript errors or horizontal document overflow in these checks.
+All 646 provider/lane combinations generated HTTP(S) destination URLs. This checks URL construction, not third-party uptime or the accuracy of returned search results. External services may require login, subscription, consent, or have their own regional restrictions.
+
+SCOPE
+This replacement updates the main portal only. Legacy standalone apps and their external links were inspected as repository context but were not modified or exhaustively audited. The repository README currently contains a Python script rather than plain Markdown; it was left unchanged.
+
+PUBLICATION
+The GitHub integration returned HTTP 403 (Resource not accessible by integration). No remote changes were committed. Upload the replacement index.html to apply this cleanup.

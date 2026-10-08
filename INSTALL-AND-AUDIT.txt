@@ -31,3 +31,6 @@ The GitHub integration returned HTTP 403 (Resource not accessible by integration
 
 PROVIDER UPDATE — v4.1.0
 Added Marginalia Search, Wiby, and Yep to provider selection, both directories, destination preview, comparison, and saved/shareable setups. The new engines open web search for all lanes. Confirmed homepage availability through public web retrieval; search-result retrieval was unavailable through the audit service, so end-to-end third-party result pages remain unverified. Local browser checks confirm the new routes retain the selected provider hostname across all 34 lanes.
+
+LINK UPDATE
+Visit Provider Website is now Visit Verve N Veda and links directly to https://vervenveda.com/ in a new tab.

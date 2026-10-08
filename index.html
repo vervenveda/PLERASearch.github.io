@@ -1118,7 +1118,7 @@ main{width:min(1180px,calc(100% - 32px));margin:auto}.workspace-nav{display:flex
         <button class="secondary-button teal" id="compareButton" type="button">Compare Sources</button>
         <button class="secondary-button" id="saveSearchButton" type="button">Save Search</button>
         <button class="secondary-button" id="copySetupButton" type="button">Copy Shareable Setup</button>
-        <button class="secondary-button" id="providerHomeButton" type="button">Visit Provider Website</button>
+        <a class="secondary-button" id="providerHomeButton" href="https://vervenveda.com/" target="_blank" rel="noopener noreferrer">Visit Verve N Veda ↗</a>
         <button class="secondary-button" id="clearButton" type="button">Clear Query</button>
         <button class="secondary-button" id="focusShortcutButton" type="button" data-open-modal="guideModal">Search Help</button>
       </div>
@@ -1728,7 +1728,7 @@ form.addEventListener("submit",event=>{event.preventDefault();const search=curre
 [queryInput,engineSelect,laneSelect,sourceGuide,fileType,safeSearch,exactPhrase,openNewTab,rememberSettings,includeWords,excludeWords,siteInclude,siteExclude,titleWords,urlWords,dateRange,afterDate,beforeDate,languageSelect,regionSelect].forEach(control=>control.addEventListener(control===queryInput||control.tagName==="INPUT"?"input":"change",updatePreview));
 saveHistory.addEventListener("change",()=>{saveSettings();renderHistory();setStatus(saveHistory.checked?"Recent searches will be stored only in this browser profile.":"Recent history is off; existing entries remain until cleared.","good")});
 $("#clearSourceOverride").onclick=()=>{sourceOverrideId=null;updateSourceOverride();updatePreview();setStatus("Automatic routing restored.","good")};
-$("#providerHomeButton").onclick=()=>openUrl(destinationHome(),"destination home",true);
+
 $("#clearButton").onclick=()=>{queryInput.value="";includeWords.value=excludeWords.value=siteInclude.value=siteExclude.value=titleWords.value=urlWords.value="";sourceOverrideId=null;updateSourceOverride();updatePreview();showWorkspace("search");queryInput.focus({preventScroll:true});setStatus("Search fields cleared.","good")};
 
 $("#compareButton").onclick=()=>{if(!currentSearch().url){setStatus("Enter a query before comparing sources.","bad");return}openModal("compareModal")};

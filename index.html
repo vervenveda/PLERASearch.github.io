@@ -1042,13 +1042,13 @@ main{width:min(1180px,calc(100% - 32px));margin:auto}.workspace-nav{display:flex
     </a>
     <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="topNavigation">Menu</button>
     <nav class="topnav" id="topNavigation" aria-label="Primary navigation">
-      <a href="#searchStudio">Search</a>
+      <a href="#searchStudio" data-ticker>Search</a>
       <button type="button" data-open-modal="networkModal">PLERA Network</button>
       <button type="button" data-open-modal="resourceModal">Research Library</button>
       <button type="button" data-open-modal="engineModal">Search Engines</button>
       <button type="button" data-open-modal="guideModal">Search Guide</button>
-      <a href="#privacy">Privacy</a>
-      <a href="https://vervenveda.github.io/">Verve N Veda</a>
+      <a href="#privacy" data-ticker>Privacy</a>
+      <a href="https://vervenveda.github.io/" data-ticker>Verve N Veda</a>
     </nav>
   </div>
 </header>
@@ -1793,6 +1793,8 @@ init();
 window.PLERA_SearchGate={version:"4.1.0",engines:Object.keys(ENGINES),lanes:Object.keys(LANES),resources:RESOURCES.length,repositories:REPOS.length,currentSearch,buildGeneralQuery};
 })();
 </script>
+<script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
+<script>VNV_TICKER.autoPopulate({label:"PLERA Search Quick Links",max:12});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>

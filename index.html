@@ -1030,29 +1030,6 @@ main{width:min(1180px,calc(100% - 32px));margin:auto}.workspace-nav{display:flex
 </div>
 <a class="skip-link" href="#searchStudio">Skip to search controls</a>
 
-<header class="topbar">
-  <div class="topbar-inner">
-    <a class="brand" href="https://vervenveda.github.io/PLERASearch.github.io/" aria-label="PLERA Search home">
-      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
-        <circle class="brand-ring" cx="34" cy="29" r="19"></circle>
-        <path class="brand-highlight" d="M22 26a13 13 0 0 1 16-9"></path>
-        <path class="brand-handle" d="M20 44 9 55"></path>
-      </svg>
-      <span class="brand-copy"><strong>PLERA Search</strong><span>Sovereign Discovery Gateway</span></span>
-    </a>
-    <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="topNavigation">Menu</button>
-    <nav class="topnav" id="topNavigation" aria-label="Primary navigation">
-      <a href="#searchStudio" data-ticker>Search</a>
-      <button type="button" data-open-modal="networkModal">PLERA Network</button>
-      <button type="button" data-open-modal="resourceModal">Research Library</button>
-      <button type="button" data-open-modal="engineModal">Search Engines</button>
-      <button type="button" data-open-modal="guideModal">Search Guide</button>
-      <a href="#privacy" data-ticker>Privacy</a>
-      <a href="https://vervenveda.github.io/" data-ticker>Verve N Veda</a>
-    </nav>
-  </div>
-</header>
-
 <section class="hero" aria-labelledby="pageTitle"><div class="hero-inner">
 <div class="eyebrow">PLERA Search Gate™</div><h1 id="pageTitle">Find your next answer.</h1>
 <p class="hero-copy">Search the web, explore trusted research sources, or discover the PLERA network. Choose a destination and see your search before opening it.</p>
@@ -1774,15 +1751,23 @@ $("#exportLocalButton").onclick=exportLocal;$("#importLocalButton").onclick=()=>
 $("#localImportInput").onchange=async e=>{try{await importLocal(e.target.files?.[0]);setStatus("Local search library imported.","good")}catch(err){setStatus(`Import failed: ${err.message}`,"bad")}finally{e.target.value=""}};
 $("#resourceFilter").oninput=renderResources;$("#resourceCategory").onchange=renderResources;$("#clearResourceFilter").onclick=()=>{$("#resourceFilter").value="";$("#resourceCategory").value="";renderResources()};
 $("#networkFilter").oninput=renderNetwork;$("#networkCategory").onchange=renderNetwork;$("#refreshReposButton").onclick=refreshRepositories;
-$$("[data-open-modal]").forEach(b=>b.onclick=()=>openModal(b.dataset.openModal));$$("[data-close-modal]").forEach(b=>b.onclick=()=>closeModal(b.closest(".plera-modal").id));
+$("[data-open-modal]").forEach(b=>b.onclick=()=>openModal(b.dataset.openModal));
+document.addEventListener("click",e=>{
+  const map={"#plera-network":"networkModal","#research-library":"resourceModal","#search-engines":"engineModal","#search-guide":"guideModal"};
+  const link=e.target.closest?.("a[href]");
+  const id=link?map[link.getAttribute("href")]:null;
+  if(!id)return;
+  e.preventDefault();
+  openModal(id);
+});$$("[data-close-modal]").forEach(b=>b.onclick=()=>closeModal(b.closest(".plera-modal").id));
 $$(".plera-modal").forEach(m=>m.addEventListener("pointerdown",e=>{if(e.target===m)closeModal(m.id)}));
 const menuButton=$("#menuButton"),topNavigation=$("#topNavigation");
-menuButton.onclick=()=>{const open=topNavigation.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open))};
-topNavigation.addEventListener("click",e=>{if(e.target.closest("a,button")){topNavigation.classList.remove("open");menuButton.setAttribute("aria-expanded","false")}});
+if(menuButton&&topNavigation)menuButton.onclick=()=>{const open=topNavigation.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open))};
+topNavigation?.addEventListener("click",e=>{if(e.target.closest("a,button")){topNavigation.classList.remove("open");menuButton?.setAttribute("aria-expanded","false")}});
 document.addEventListener("keydown",event=>{
   if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==="k"){event.preventDefault();queryInput.focus();queryInput.select()}
   const modal=$(".plera-modal.open");
-  if(event.key==="Escape"){if(modal)closeModal(modal.id);else if(topNavigation.classList.contains("open")){topNavigation.classList.remove("open");menuButton.setAttribute("aria-expanded","false");menuButton.focus()}else if(document.activeElement===queryInput&&queryInput.value){queryInput.value="";updatePreview()}}
+  if(event.key==="Escape"){if(modal)closeModal(modal.id);else if(topNavigation?.classList.contains("open")){topNavigation.classList.remove("open");menuButton?.setAttribute("aria-expanded","false");menuButton?.focus()}else if(document.activeElement===queryInput&&queryInput.value){queryInput.value="";updatePreview()}}
   if(event.key==="Tab"&&modal){const focusable=$$("a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex='-1'])").filter(el=>modal.contains(el)&&el.offsetParent!==null);if(focusable.length){const first=focusable[0],last=focusable.at(-1);if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}}}
 });
 function init(){
@@ -1794,12 +1779,12 @@ window.PLERA_SearchGate={version:"4.1.0",engines:Object.keys(ENGINES),lanes:Obje
 })();
 </script>
 
+<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
+<script>VNV_HEADER.mount({"title":"PLERA Search","subtitle":"Sovereign Discovery Gateway","icon":"PS","home":"https://vervenveda.github.io/PLERASearch.github.io/","actions":[{"label":"Search","href":"#searchStudio"},{"label":"PLERA Network","href":"#plera-network"},{"label":"Research Library","href":"#research-library"},{"label":"Search Engines","href":"#search-engines"},{"label":"Search Guide","href":"#search-guide"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-333-ticker.js"></script>
 <script src="https://vervenveda.com/assets/vnv-ticker-autopopulate.js" data-vnv-ticker-autopopulate></script>
 <script>VNV_TICKER.autoPopulate({label:"PLERA Search Quick Links",max:12});</script>
-
-<script src="https://vervenveda.com/assets/vnv-header-autopopulate.js"></script>
-<script>VNV_HEADER.mount({replaceLegacy:true});</script>
+<script>VNV_HEADER.mount({"title":"PLERA Search","subtitle":"Sovereign Discovery Gateway","icon":"PS","home":"https://vervenveda.github.io/PLERASearch.github.io/","actions":[{"label":"Search","href":"#searchStudio"},{"label":"PLERA Network","href":"#plera-network"},{"label":"Research Library","href":"#research-library"},{"label":"Search Engines","href":"#search-engines"},{"label":"Search Guide","href":"#search-guide"}]});</script>
 <script src="https://vervenveda.com/assets/vnv-ecosystem-toolbar.js"></script>
 </body>
 </html>

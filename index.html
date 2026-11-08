@@ -9,6 +9,73 @@
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src https://api.github.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <title>PLERA Search — Sovereign Discovery Gateway</title>
+<!-- Opt-in refresh diagnostic, active only at ?chrome_audit=1; no storage or reporting. -->
+<script id="plera-refresh-forensic-probe">
+(()=>{
+"use strict";
+if(new URLSearchParams(location.search).get("chrome_audit")!=="1"||window.PLERARefreshAudit)return;
+const ids=["vnv333NetworkTicker","vnvTickerAutoPopulate","vnvHeaderAutoPopulate","vnvEcosystemUtilityDock"];
+const events=[];let panel,pre,stopped=false,scheduled=false;
+const now=()=>Math.round(performance.now())+"ms";
+function report(){
+ const named=ids.map(id=>{
+   const el=document.getElementById(id);
+   if(!el)return id+": MISSING";
+   const rect=el.getBoundingClientRect(),css=getComputedStyle(el);
+   return id+": "+Math.round(rect.width)+"x"+Math.round(rect.height)+" @ "+Math.round(rect.x)+","+Math.round(rect.y)+" · "+css.position+" · "+css.visibility;
+ });
+ const headerCount=document.querySelectorAll("#vnvHeaderAutoPopulate").length;
+ const hero=document.querySelector(".hero"),studio=document.getElementById("searchStudio");
+ const place=el=>el?Math.round(el.getBoundingClientRect().top)+"px":"not mounted";
+ return "PLERA Refresh Forensics (no personal data)\n"+
+   "Time "+now()+" · readyState "+document.readyState+" · viewport "+innerWidth+"x"+innerHeight+
+   " · root color-scheme "+getComputedStyle(document.documentElement).colorScheme+"\n"+
+   "Native strip "+place(document.querySelector(".vnv-global-strip"))+
+   " · hero "+place(hero)+" · search panel "+place(studio)+"\n"+
+   "Header instances "+headerCount+"\n"+named.join("\n")+
+   "\n\nStartup events:\n"+events.slice(-26).join("\n");
+}
+function paint(){
+ if(stopped||!document.body)return;
+ if(!panel){
+   panel=document.createElement("aside");panel.id="pleraRefreshAuditPanel";
+   panel.setAttribute("aria-label","PLERA Search refresh forensic diagnostics");
+   panel.style.cssText="position:fixed!important;z-index:2147483647!important;left:8px;bottom:8px;width:min(690px,calc(100vw - 16px));max-height:48vh;overflow:auto;padding:12px;border:2px solid #b48b45;border-radius:7px;background:#243038!important;color:#fff8e9!important;font:400 13px/1.5 ui-monospace,monospace!important;box-shadow:0 14px 44px #0008";
+   const close=document.createElement("button");close.type="button";close.textContent="Close diagnostics";
+   close.style.cssText="display:block;background:#fff8e9!important;color:#243038!important;border:0;border-radius:7px;font:400 16px sans-serif!important;padding:7px 12px;margin-bottom:8px;cursor:pointer";
+   close.addEventListener("click",()=>{stopped=true;observer.disconnect();panel.remove()});
+   pre=document.createElement("pre");pre.style.cssText="white-space:pre-wrap;overflow-wrap:anywhere;margin:0;font:inherit!important;background:none!important;color:inherit!important";
+   panel.append(close,pre);document.body.append(panel);
+ }
+ pre.textContent=report();
+}
+function record(text){
+ if(stopped)return;
+ events.push(now()+" "+text);if(events.length>60)events.shift();
+ if(!scheduled){scheduled=true;requestAnimationFrame(()=>{scheduled=false;paint()})}
+}
+const observer=new MutationObserver(records=>{
+ let changes=[];
+ for(const mutation of records){
+   for(const node of [...mutation.addedNodes,...mutation.removedNodes]){
+     if(node.nodeType!==1||node.id==="pleraRefreshAuditPanel")continue;
+     const hit=ids.find(id=>node.id===id||node.querySelector?.("#"+id));
+     if(hit)changes.push((mutation.addedNodes.length?"ADDED ":"REMOVED ")+hit);
+   }
+ }
+ if(changes.length)record([...new Set(changes)].join("; "));
+});
+observer.observe(document.documentElement,{childList:true,subtree:true});
+document.addEventListener("DOMContentLoaded",()=>record("DOMContentLoaded"),{once:true});
+window.addEventListener("load",()=>record("window load"),{once:true});
+window.addEventListener("pageshow",()=>record("pageshow"));
+window.addEventListener("error",e=>{if(e.target?.tagName==="SCRIPT")record("SCRIPT ERROR "+(e.target.src||"").split("/").pop());else if(e.message)record("JS ERROR "+String(e.message).slice(0,100))},true);
+window.addEventListener("unhandledrejection",e=>record("PROMISE ERROR "+String(e.reason?.message||"unknown").slice(0,100)));
+window.PLERARefreshAudit=Object.freeze({version:"1.0.0",snapshot:report,events:()=>events.slice()});
+record("Early probe installed");
+for(const ms of [80,250,600,1200,2200])setTimeout(()=>record("Timed snapshot "+ms+"ms"),ms);
+})();
+</script>
 <style>
 :root{
   --font-display:"Gaspacho","Cormorant Garamond",Georgia,serif;

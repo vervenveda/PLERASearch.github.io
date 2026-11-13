@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="PLERA Search is a comprehensive sovereign discovery gateway for transparent web search, specialist research, source comparison, public repositories, and the Verve N Veda network.">
-<meta name="theme-color" content="#03132d">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#202724">
+<meta name="color-scheme" content="light">
 <meta name="referrer" content="no-referrer">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src https://api.github.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'unsafe-inline' https://vervenveda.com; style-src 'unsafe-inline' https://vervenveda.com; img-src 'self' data: blob:; font-src 'self' data:; connect-src https://api.github.com; object-src 'none'; frame-src 'none'; base-uri 'none'; form-action 'none'">
 <title>PLERA Search — Sovereign Discovery Gateway</title>
 <!-- Opt-in refresh diagnostic, active only at ?chrome_audit=1; no storage or reporting. -->
 <script id="plera-refresh-forensic-probe">
@@ -1232,45 +1232,296 @@ footer{background:#243038!important;border-top:1px solid #b48b45!important;color
 }
 
 </style>
-<style id="vnv-global-ecosystem-shell">
-.vnv-global-strip{position:relative;z-index:2147482000;min-height:38px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:5px 12px;border-bottom:1px solid rgba(160,140,100,.28);background:#121918;color:#eee8dc;font:400 12px/1.2 "Avenir Next",Avenir,"Segoe UI",Arial,sans-serif}
-.vnv-global-strip a{color:inherit;text-decoration:none}.vnv-global-brand{display:flex;align-items:center;gap:8px;white-space:nowrap}.vnv-global-mark{width:26px;height:26px;display:grid;place-items:center;border:1px solid rgba(238,232,220,.38);border-radius:7px;font:500 10px Georgia,serif}.vnv-global-copy{display:grid}.vnv-global-copy strong{font:500 11px Georgia,serif;letter-spacing:.08em;text-transform:uppercase}.vnv-global-copy small{margin-top:1px;color:#bdb5a6;font-size:9px;letter-spacing:.06em;text-transform:uppercase}
-.vnv-global-links{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;overflow:hidden;white-space:nowrap}.vnv-global-links a{color:#d8d1c5;font-size:10px;letter-spacing:.04em}.vnv-global-links a:hover,.vnv-global-links a:focus-visible{color:#fff}
-.vnv-global-menu{position:relative;justify-self:end}.vnv-global-menu summary{list-style:none;width:30px;height:30px;display:grid;place-items:center;border:1px solid rgba(238,232,220,.28);border-radius:7px;cursor:pointer}.vnv-global-menu summary::-webkit-details-marker{display:none}.vnv-global-lines,.vnv-global-lines:before,.vnv-global-lines:after{content:"";display:block;width:14px;height:1.5px;background:#eee8dc}.vnv-global-lines{position:relative}.vnv-global-lines:before,.vnv-global-lines:after{position:absolute;left:0}.vnv-global-lines:before{top:-5px}.vnv-global-lines:after{top:5px}
-.vnv-global-panel{position:absolute;right:0;top:36px;width:min(300px,calc(100vw - 20px));padding:10px;border:1px solid rgba(238,232,220,.22);border-radius:7px;background:#17201f;box-shadow:0 18px 40px rgba(0,0,0,.28)}.vnv-global-panel p{margin:3px 5px 8px;color:#aaa294;font-size:9px;letter-spacing:.1em;text-transform:uppercase}.vnv-global-panel a{display:block;padding:9px 10px;border-radius:5px;color:#eee8dc;font-size:11px}.vnv-global-panel a:hover,.vnv-global-panel a:focus-visible{background:#22302e}
-@media(max-width:760px){.vnv-global-strip{grid-template-columns:minmax(0,1fr) auto}.vnv-global-links{display:none}.vnv-global-copy small{display:none}}@media print{.vnv-global-strip{display:none!important}}
+
+<style id="plera-academy-elegant-v2">
+
+/* PLERA Academy presentation v2 — canonical chrome owns header, tickers and toolbar.
+   This scope deliberately changes appearance and category navigation only; the
+   original search, saved records, provider and modal engines remain untouched. */
+html{scroll-padding-top:155px!important}
+html:root:root body.plera-academy-v2{
+ --night:#202724;--night-2:#28342e;--night-3:#34463c;
+ --paper:#fffdf8;--ink:#27302d;--muted:#536158;--faint:#6b756c;
+ --gold:#b8995c;--gold-2:#b8995c;--teal:#476a56;--violet:#536158;
+ --rose:#76592e;--good:#476a56;--warn:#76592e;--bad:#9a4a4a;
+ --line:#d3c6a9;--line-blue:#d3c6a9;
+ --panel:#fffdf8;--panel-strong:#f7f1e5;--shadow:none;--radius:7px;
+ --font-display:Cinzel,Georgia,serif;--font-brand:Cinzel,Georgia,serif;
+ --font-ui:"Brandon Grotesque",Nunito,"Avenir Next",Arial,sans-serif;
+ background:#f4f0e7!important;color:#27302d!important;
+ font:400 18px/1.7 "Brandon Grotesque",Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2::before{display:none!important}
+html:root:root body.plera-academy-v2 .hero{
+ width:100%!important;min-height:0!important;margin:0!important;
+ padding:55px 20px 48px!important;background:#202724!important;
+ border-bottom:3px solid #b8995c!important;box-shadow:none!important;
+}
+html:root:root body.plera-academy-v2 .hero::before,
+html:root:root body.plera-academy-v2 .hero::after{display:none!important}
+html:root:root body.plera-academy-v2 .hero-inner{
+ max-width:920px!important;margin:0 auto!important;padding:0!important;
+ text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .plera-academy-name{
+ font:400 clamp(21px,2.5vw,33px)/1.35 Cinzel,Georgia,serif!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ margin:0 auto 17px!important;text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .eyebrow{
+ margin:0 auto 10px!important;color:#e9c989!important;
+ -webkit-text-fill-color:#e9c989!important;
+ font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+ letter-spacing:.08em!important;text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .hero h1{
+ margin:0 auto 19px!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;
+ font:400 clamp(38px,5vw,66px)/1.15 Cinzel,Georgia,serif!important;
+ letter-spacing:0!important;text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .hero-copy{
+ max-width:790px!important;margin:0 auto!important;
+ color:#eee5d3!important;-webkit-text-fill-color:#eee5d3!important;
+ font:400 18px/1.75 Nunito,Arial,sans-serif!important;text-align:center!important;
+}
+html:root:root body.plera-academy-v2 main{
+ width:min(1120px,calc(100% - 36px))!important;max-width:1120px!important;
+ margin:30px auto 70px!important;padding:0!important;
+}
+html:root:root body.plera-academy-v2 .workspace-nav{
+ display:flex!important;justify-content:center!important;flex-wrap:wrap!important;
+ gap:9px!important;margin:0 auto 22px!important;padding:12px!important;
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#fffdf8!important;box-shadow:none!important;
+}
+html:root:root body.plera-academy-v2 .workspace-nav button{
+ flex:0 1 auto!important;min-height:45px!important;padding:10px 16px!important;
+ background:#f7f1e5!important;color:#27302d!important;
+ -webkit-text-fill-color:#27302d!important;border:1px solid #d3c6a9!important;
+ border-radius:7px!important;font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2 .workspace-nav button[aria-pressed="true"]{
+ background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;border-color:#b8995c!important;
+}
+html:root:root body.plera-academy-v2 :is(.search-studio,.quick-section,.directory-section,.privacy-section){
+ width:100%!important;margin:0 auto 24px!important;
+ padding:clamp(22px,4vw,39px)!important;
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+ box-shadow:none!important;backdrop-filter:none!important;
+}
+html:root:root body.plera-academy-v2 .studio-head,
+html:root:root body.plera-academy-v2 .section-head{
+ display:block!important;max-width:850px!important;margin:0 auto 22px!important;
+ text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .section-kicker{
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+ color:#76592e!important;-webkit-text-fill-color:#76592e!important;
+ letter-spacing:.07em!important;text-transform:uppercase!important;
+}
+html:root:root body.plera-academy-v2 .studio-head h2,
+html:root:root body.plera-academy-v2 .section-head h2{
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 clamp(27px,3vw,37px)/1.3 Cinzel,Georgia,serif!important;
+ letter-spacing:0!important;margin:8px auto 15px!important;
+}
+html:root:root body.plera-academy-v2 .studio-head p,
+html:root:root body.plera-academy-v2 .section-head p{
+ color:#536158!important;-webkit-text-fill-color:#536158!important;
+ font:400 18px/1.6 Nunito,Arial,sans-serif!important;margin:0 auto!important;
+}
+html:root:root body.plera-academy-v2 .query-row{
+ display:grid!important;grid-template-columns:minmax(0,1fr) auto!important;
+ gap:12px!important;max-width:950px!important;margin:24px auto 0!important;
+}
+html:root:root body.plera-academy-v2 .search-input{
+ box-sizing:border-box!important;min-height:61px!important;width:100%!important;
+ padding:14px 19px!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;background:#fffdf8!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 18px/1.5 Nunito,Arial,sans-serif!important;box-shadow:none!important;
+}
+html:root:root body.plera-academy-v2 .search-input::placeholder{color:#667268!important;-webkit-text-fill-color:#667268!important;opacity:1!important}
+html:root:root body.plera-academy-v2 .primary-button{
+ min-height:54px!important;padding:12px 23px!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 17px/1.45 Nunito,Arial,sans-serif!important;
+ box-shadow:none!important;transform:none!important;
+}
+html:root:root body.plera-academy-v2 .primary-button:is(:hover,:focus-visible){
+ background:#34463c!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.plera-academy-v2 .controls-grid.five{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:15px!important;max-width:950px!important;margin:22px auto!important;
+}
+html:root:root body.plera-academy-v2 .field :is(label,span){
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2 .field :is(input,select){
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+ background:#fffdf8!important;border:1px solid #cdbf9f!important;
+ border-radius:7px!important;font:400 16px/1.5 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2 :is(.options,.destination-preview,.search-status,.override-strip,.fallback-link){
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#f7f1e5!important;color:#27302d!important;
+ box-shadow:none!important;
+}
+html:root:root body.plera-academy-v2 :is(.options,.destination-preview,.search-status,.override-strip,.fallback-link) :is(strong,span,p,summary){
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;font-weight:400!important;
+}
+html:root:root body.plera-academy-v2 .studio-actions{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex-wrap:wrap!important;gap:10px!important;
+}
+html:root:root body.plera-academy-v2 :is(.secondary-button,.quiet-button){
+ min-height:43px!important;padding:9px 14px!important;
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+ -webkit-text-fill-color:#27302d!important;
+ font:400 16px/1.45 Nunito,Arial,sans-serif!important;box-shadow:none!important;
+}
+html:root:root body.plera-academy-v2 :is(.secondary-button,.quiet-button):is(:hover,:focus-visible){
+ background:#f7f1e5!important;border-color:#b8995c!important;
+}
+html:root:root body.plera-academy-v2 :is(.secondary-button.teal){
+ background:#202724!important;color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-hall{
+ margin:26px auto!important;padding:clamp(25px,4vw,38px)!important;
+ background:#f7f1e5!important;border:1px solid #d3c6a9!important;
+ border-top:3px solid #b8995c!important;border-radius:7px!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-intro{
+ margin:0 auto 27px!important;text-align:center!important;max-width:770px!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-eyebrow{
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;color:#76592e!important;
+ -webkit-text-fill-color:#76592e!important;text-transform:uppercase!important;letter-spacing:.06em!important;
+ margin:0 auto 8px!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-intro h2{
+ margin:0 auto 12px!important;font:400 clamp(27px,3vw,37px)/1.3 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-intro>p:last-child{
+ margin:0 auto!important;font:400 17px/1.7 Nunito,Arial,sans-serif!important;
+ color:#536158!important;-webkit-text-fill-color:#536158!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-cards{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-choice{
+ display:flex!important;align-items:center!important;gap:16px!important;
+ min-height:115px!important;padding:20px!important;text-align:left!important;
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;
+ -webkit-text-fill-color:#27302d!important;box-shadow:none!important;
+ font:400 16px/1.5 Nunito,Arial,sans-serif!important;transform:none!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-choice:is(:hover,:focus-visible){
+ border-color:#b8995c!important;background:#fefaf0!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-icon{
+ flex:0 0 46px!important;display:grid!important;place-items:center!important;
+ width:46px!important;height:46px!important;border-radius:7px!important;
+ background:#202724!important;color:#fff8e9!important;
+ -webkit-text-fill-color:#fff8e9!important;font:400 24px/1 Georgia,serif!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-copy{display:block!important;flex:1!important;min-width:0!important}
+html:root:root body.plera-academy-v2 .plera-category-copy strong{
+ display:block!important;font:400 21px/1.35 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;margin:0 0 7px!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-copy small{
+ display:block!important;font:400 16px/1.55 Nunito,Arial,sans-serif!important;
+ color:#536158!important;-webkit-text-fill-color:#536158!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-arrow{
+ font:400 29px/1 Nunito,Arial,sans-serif!important;color:#76592e!important;
+ -webkit-text-fill-color:#76592e!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-more{
+ display:flex!important;justify-content:center!important;flex-wrap:wrap!important;
+ gap:10px!important;margin:24px auto 0!important;
+}
+html:root:root body.plera-academy-v2 .plera-category-more button{
+ min-height:44px!important;padding:10px 16px!important;border:1px solid #b8995c!important;
+ border-radius:7px!important;background:#202724!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.45 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2 :is(.profile-card,.category-card,.engine-card,.recent-shell,.guide-panel,.launch-card,.privacy-card){
+ border:1px solid #d3c6a9!important;border-radius:7px!important;
+ background:#f7f1e5!important;color:#27302d!important;
+ -webkit-text-fill-color:#27302d!important;box-shadow:none!important;transform:none!important;
+}
+html:root:root body.plera-academy-v2 :is(.profile-card,.category-card,.engine-card,.recent-shell,.guide-panel,.launch-card,.privacy-card) :is(strong,em,small,span,p){
+ font-weight:400!important;color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.plera-academy-v2 :is(.profile-grid,.category-grid,.engine-grid){gap:14px!important}
+html:root:root body.plera-academy-v2 .plera-modal{background:rgba(12,23,20,.67)!important;backdrop-filter:none!important}
+html:root:root body.plera-academy-v2 .plera-dialog{
+ border:2px solid #b8995c!important;border-radius:7px!important;
+ background:#fffdf8!important;color:#27302d!important;box-shadow:0 18px 45px rgba(12,23,20,.25)!important;
+}
+html:root:root body.plera-academy-v2 .modal-head,
+html:root:root body.plera-academy-v2 .modal-body{
+ background:#fffdf8!important;color:#27302d!important;
+}
+html:root:root body.plera-academy-v2 .modal-head h2{
+ font:400 clamp(24px,3vw,33px)/1.3 Cinzel,Georgia,serif!important;
+ color:#27302d!important;-webkit-text-fill-color:#27302d!important;
+}
+html:root:root body.plera-academy-v2 footer{
+ background:#202724!important;color:#fff8e9!important;
+ border-top:2px solid #b8995c!important;
+}
+html:root:root body.plera-academy-v2 footer .footer-inner{
+ display:flex!important;align-items:center!important;justify-content:center!important;
+ flex-wrap:wrap!important;gap:20px!important;text-align:center!important;
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 16px/1.6 Nunito,Arial,sans-serif!important;
+}
+html:root:root body.plera-academy-v2 footer strong{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 20px/1.4 Cinzel,Georgia,serif!important;
+}
+html:root:root body.plera-academy-v2 :is(a,button,input,select,summary):focus-visible{
+ outline:3px solid #b8995c!important;outline-offset:3px!important;
+}
+@media(max-width:760px){
+ html:root:root body.plera-academy-v2 .hero{padding:35px 16px!important}
+ html:root:root body.plera-academy-v2 .plera-category-cards{grid-template-columns:1fr!important}
+ html:root:root body.plera-academy-v2 .query-row{grid-template-columns:minmax(0,1fr)!important}
+ html:root:root body.plera-academy-v2 .query-row .primary-button{width:100%!important}
+ html:root:root body.plera-academy-v2 .workspace-nav button{flex:1 1 145px!important}
+ html:root:root body.plera-academy-v2 .controls-grid.five{grid-template-columns:1fr!important}
+}
+@media(max-width:450px){
+ html:root:root body.plera-academy-v2 main{width:min(100% - 22px,1120px)!important}
+ html:root:root body.plera-academy-v2 .plera-category-choice{padding:15px!important;gap:10px!important}
+ html:root:root body.plera-academy-v2 .plera-category-icon{flex-basis:36px!important;width:36px!important;height:36px!important}
+}
+@media(prefers-reduced-motion:reduce){
+ html:root:root body.plera-academy-v2 :is(.plera-category-choice,.primary-button){transition:none!important}
+}
+@media print{body.plera-academy-v2 .plera-category-more,body.plera-academy-v2 .workspace-nav{display:none!important}}
+
 </style>
 </head>
-<body>
-<div class="vnv-global-strip" data-vnv-global-strip>
-  <a class="vnv-global-brand" href="https://vervenveda.com/" aria-label="Verve N Veda home">
-    <span class="vnv-global-mark">VNV</span>
-    <span class="vnv-global-copy"><strong>Verve N Veda</strong><small>Research & Discovery</small></span>
-  </a>
-  <nav class="vnv-global-links" aria-label="Verve N Veda network links">
-    <a href="https://vervenveda.com/PLERASearch.github.io/">This Hub</a>
-    <a href="https://vervenveda.com/#directory">Ecosystem Directory</a>
-    <a href="https://vervenveda.com/core/directory-agi/">Directory AGI</a>
-    <a href="https://vervenveda.com/cloud/">Public Cloud</a>
-  </nav>
-  <details class="vnv-global-menu">
-    <summary aria-label="Open Verve N Veda ecosystem menu"><span class="vnv-global-lines" aria-hidden="true"></span></summary>
-    <div class="vnv-global-panel">
-      <p>Ecosystem</p>
-      <a href="https://vervenveda.com/">Verve N Veda Gateway</a>
-      <a href="https://vervenveda.com/#directory">Complete Ecosystem Directory</a>
-      <a href="https://vervenveda.com/Khaemenes_Academy.github.io/">Khaemenes Academy</a>
-      <a href="https://vervenveda.com/PLERASearch.github.io/">PLERA Search</a>
-      <a href="https://vervenveda.com/theverifier.github.io/">The Verifier</a>
-      <a href="https://vervenveda.com/proresource_hub.github.io/">Professional Resources</a>
-      <a href="https://vervenveda.com/Arshif.github.io/">ARSHIF</a>
-    </div>
-  </details>
-</div>
+<body class="plera-academy-v2">
+
 <a class="skip-link" href="#searchStudio">Skip to search controls</a>
 
 <section class="hero" aria-labelledby="pageTitle"><div class="hero-inner">
-<div class="eyebrow">Research &amp; Discovery</div><h1 id="pageTitle">PLERA Search Gate™</h1>
+<div class="plera-academy-name">Verve N Veda · Research &amp; Discovery</div><div class="eyebrow">Sovereign Search Gateway</div><h1 id="pageTitle">PLERA Search</h1>
 <p class="hero-copy">Find your next answer. Search the web, explore trusted research sources, or discover the PLERA network. Choose a destination and see your search before opening it.</p>
 </div></section>
 <main>
@@ -1375,6 +1626,61 @@ footer{background:#243038!important;border-top:1px solid #b48b45!important;color
       <div class="fallback-link" id="fallbackBox" hidden>Your browser blocked the new tab. <a id="fallbackAnchor" href="#" target="_blank" rel="noopener noreferrer">Open the prepared search directly</a>.</div>
       <div class="search-status" id="searchStatus" role="status" aria-live="polite">Ready. Press Ctrl or Command + K from anywhere on the page to focus the search field.</div>
     </form>
+  </section>
+
+  <section class="plera-category-hall" id="pleraCategories" aria-labelledby="pleraCategoryTitle">
+   <div class="plera-category-intro">
+     <p class="plera-category-eyebrow">Choose a direction</p>
+     <h2 id="pleraCategoryTitle">Explore by category</h2>
+     <p>Select a field of interest. PLERA will prepare its matching search lane, leaving you in control of your query and provider.</p>
+   </div>
+   <div class="plera-category-cards">
+     <button class="plera-category-choice" type="button" data-plera-category="scholar" aria-label="Research & Scholarship search lane">
+       <span class="plera-category-icon" aria-hidden="true">◈</span>
+       <span class="plera-category-copy"><strong>Research & Scholarship</strong><small>Journal articles, academic papers and scholarly sources.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="news" aria-label="News & Verification search lane">
+       <span class="plera-category-icon" aria-hidden="true">◷</span>
+       <span class="plera-category-copy"><strong>News & Verification</strong><small>Investigate current reporting and compare sources.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="images" aria-label="Images & Media search lane">
+       <span class="plera-category-icon" aria-hidden="true">▧</span>
+       <span class="plera-category-copy"><strong>Images & Media</strong><small>Explore images, illustrations and visual collections.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="government" aria-label="Government & Public Records search lane">
+       <span class="plera-category-icon" aria-hidden="true">▥</span>
+       <span class="plera-category-copy"><strong>Government & Public Records</strong><small>Find official agencies, records and public information.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="books" aria-label="Books & Archives search lane">
+       <span class="plera-category-icon" aria-hidden="true">▤</span>
+       <span class="plera-category-copy"><strong>Books & Archives</strong><small>Discover books, catalogues and primary sources.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="code" aria-label="Technology & Code search lane">
+       <span class="plera-category-icon" aria-hidden="true">⌘</span>
+       <span class="plera-category-copy"><strong>Technology & Code</strong><small>Locate documentation, software projects and examples.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="education" aria-label="Education & Learning search lane">
+       <span class="plera-category-icon" aria-hidden="true">✧</span>
+       <span class="plera-category-copy"><strong>Education & Learning</strong><small>Research curricula, instruction and learning resources.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+     <button class="plera-category-choice" type="button" data-plera-category="art" aria-label="Art & Museums search lane">
+       <span class="plera-category-icon" aria-hidden="true">◇</span>
+       <span class="plera-category-copy"><strong>Art & Museums</strong><small>Explore cultural collections and artistic research.</small></span>
+       <span class="plera-category-arrow" aria-hidden="true">›</span>
+     </button>
+   </div>
+   <div class="plera-category-more">
+     <button type="button" data-view="methods">Browse all research methods</button>
+     <button type="button" data-view="sources">Explore source directories</button>
+     <button type="button" data-view="saved">My saved searches</button>
+   </div>
   </section>
 
   <section class="quick-section" id="profiles" aria-labelledby="profileTitle">
@@ -1538,6 +1844,16 @@ function showWorkspace(view){
   document.querySelectorAll("[data-view]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.view===view)));
 }
 document.querySelectorAll("[data-view]").forEach(b=>b.addEventListener("click",()=>showWorkspace(b.dataset.view)));
+document.querySelectorAll("[data-plera-category]").forEach(button=>button.addEventListener("click",()=>{
+ const id=button.dataset.pleraCategory;
+ if(!Object.prototype.hasOwnProperty.call(LANES,id))return;
+ laneSelect.value=id;
+ sourceOverrideId=null;
+ updateSourceOverride();updatePreview();showWorkspace("search");
+ document.getElementById("searchStudio")?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
+ queryInput.focus({preventScroll:true});
+ setStatus(LANES[id].name+" selected. Enter your query and open results when ready.","good");
+}));
 document.querySelectorAll('a[href="#searchStudio"],a[href="#privacy"]').forEach(a=>a.addEventListener("click",()=>showWorkspace(a.hash==="#privacy"?"privacy":"search")));
 showWorkspace("search");
 function safeParse(value,fallback){try{return JSON.parse(value)}catch{return fallback}}

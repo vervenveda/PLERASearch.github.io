@@ -1512,6 +1512,35 @@ html:root:root body.plera-academy-v2 :is(a,button,input,select,summary):focus-vi
 @media(prefers-reduced-motion:reduce){
  html:root:root body.plera-academy-v2 :is(.plera-category-choice,.primary-button){transition:none!important}
 }
+/* Footer stack: a quiet three-line block with room for the official utility dock. */
+html:root:root body.plera-academy-v2 .plera-footer{
+ width:100%!important;padding:32px 20px 100px!important;
+ background:#202724!important;color:#fff8e9!important;border-top:2px solid #b8995c!important;
+}
+html:root:root body.plera-academy-v2 .plera-footer .footer-inner{
+ box-sizing:border-box!important;width:min(100%,900px)!important;margin:0 auto!important;
+ display:flex!important;flex-direction:column!important;align-items:center!important;
+ justify-content:center!important;gap:10px!important;
+ padding:0!important;text-align:center!important;
+}
+html:root:root body.plera-academy-v2 .plera-footer-title{
+ color:#fff8e9!important;-webkit-text-fill-color:#fff8e9!important;
+ font:400 24px/1.35 Cinzel,Georgia,serif!important;letter-spacing:.025em!important;
+}
+html:root:root body.plera-academy-v2 .plera-footer-purpose{
+ max-width:760px!important;color:#eee5d3!important;-webkit-text-fill-color:#eee5d3!important;
+ font:400 17px/1.55 Nunito,Arial,sans-serif!important;overflow-wrap:break-word!important;
+}
+html:root:root body.plera-academy-v2 .plera-footer-legal{
+ max-width:760px!important;color:#eee5d3!important;-webkit-text-fill-color:#eee5d3!important;
+ font:400 16px/1.55 Nunito,Arial,sans-serif!important;overflow-wrap:break-word!important;
+}
+@media(max-width:600px){
+ html:root:root body.plera-academy-v2 .plera-footer{padding:28px 16px 115px!important}
+ html:root:root body.plera-academy-v2 .plera-footer .footer-inner{gap:12px!important}
+ html:root:root body.plera-academy-v2 .plera-footer-purpose,
+ html:root:root body.plera-academy-v2 .plera-footer-legal{max-width:42ch!important}
+}
 @media print{body.plera-academy-v2 .plera-category-more,body.plera-academy-v2 .workspace-nav{display:none!important}}
 
 </style>
@@ -1751,7 +1780,13 @@ html:root:root body.plera-academy-v2 :is(a,button,input,select,summary):focus-vi
   </section>
 </main>
 
-<footer><div class="footer-inner"><div><strong>PLERA Search</strong><br>Sovereign Discovery Gateway · Choose · Search · Compare · Verify</div><div>Verve N Veda · Khaemenes Academy · Jennifer Kay Pearl · All Rights Reserved 2026</div></div></footer>
+<footer class="plera-footer" aria-label="PLERA Search footer">
+  <div class="footer-inner">
+    <div class="plera-footer-title">PLERA Search</div>
+    <div class="plera-footer-purpose">Sovereign Discovery Gateway · Choose · Search · Compare · Verify</div>
+    <div class="plera-footer-legal">Verve N Veda · Khaemenes Academy · Jennifer Kay Pearl · All Rights Reserved 2026</div>
+  </div>
+</footer>
 
 <div class="plera-modal" id="resourceModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="resourceModalTitle">
   <div class="plera-dialog">
